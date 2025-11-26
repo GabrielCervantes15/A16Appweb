@@ -1,13 +1,13 @@
 function calcularSueldo(horasTrabajadasTotal, tarifaPorHora) {
-    const LIMITE_HORAS_NORMALES = 40;
-    const FACTOR_EXTRA = 1.5;
+    const limite_horas_normales = 40;
+    const factor_extra = 1.5;
 
     let horasBase = 0;
     let horasExtra = 0;
 
-    if (horasTrabajadasTotal > LIMITE_HORAS_NORMALES) {
-        horasBase = LIMITE_HORAS_NORMALES;
-        horasExtra = horasTrabajadasTotal - LIMITE_HORAS_NORMALES;
+    if (horasTrabajadasTotal > limite_horas_normales) {
+        horasBase = limite_horas_normales;
+        horasExtra = horasTrabajadasTotal - limite_horas_normales;
     } else {
         horasBase = horasTrabajadasTotal;
         horasExtra = 0;
@@ -15,7 +15,7 @@ function calcularSueldo(horasTrabajadasTotal, tarifaPorHora) {
 
     const pagoHorasNormales = horasBase * tarifaPorHora;
     
-    const tarifaHorasExtra = tarifaPorHora * FACTOR_EXTRA;
+    const tarifaHorasExtra = tarifaPorHora * factor_extra;
     const pagoHorasExtra = horasExtra * tarifaHorasExtra;
 
     const totalAPagar = pagoHorasNormales + pagoHorasExtra;
@@ -35,4 +35,5 @@ function calcularSueldo(horasTrabajadasTotal, tarifaPorHora) {
 
     console.log(`Total a Pagar: $${totalAPagar.toFixed(2)}`);
     console.log("-------------------------------------");
+
 }
